@@ -27,7 +27,7 @@
                                 <a class="nav-link {{ Route::is('montadora.*') ? 'active' : '' }}" aria-current="page" href="{{ route('montadora.index') }}">Montadoras</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="">Modelos</a>
+                                <a class="nav-link {{ Route::is('modelo.*') ? 'active' : '' }}" aria-current="page" href="{{ route('modelo.index') }}">Modelos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" href="">Veículos</a>

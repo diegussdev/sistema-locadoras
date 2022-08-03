@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ModeloController;
 use App\Http\Controllers\MontadoraController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +19,6 @@ Route::get('/', fn() => view('home'))->name('home');
 
 // Rotas de montadoras
 Route::resource('/montadora', MontadoraController::class);
+
+// Rotas de modelos
+Route::resource('/modelo', ModeloController::class);
