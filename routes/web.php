@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LocadoraController;
 use App\Http\Controllers\ModeloController;
 use App\Http\Controllers\MontadoraController;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,6 @@ Route::resource('/montadora', MontadoraController::class);
 
 // Rotas de modelos
 Route::resource('/modelo', ModeloController::class);
+
+// Rotas de locadoras
+Route::resource('/locadora', LocadoraController::class);

@@ -33,7 +33,7 @@
                                 <a class="nav-link" aria-current="page" href="">Veículos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="">Locadoras</a>
+                                <a class="nav-link {{ Route::is('locadora.*') ? 'active' : '' }}" aria-current="page" href="{{ route('locadora.index') }}">Locadoras</a>
                             </li>
                         </ul>
                     </div>
