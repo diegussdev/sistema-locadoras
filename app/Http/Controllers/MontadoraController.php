@@ -32,13 +32,7 @@ class MontadoraController
      */
     public function show(Montadora $montadora)
     {
-        return view(
-            'montadoras.editar',
-            [
-                'method' => 'PUT',
-                'montadora' => $montadora
-            ]
-        );
+        return view('montadoras.editar', compact('montadora'));
     }
 
     /**
