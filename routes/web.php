@@ -3,6 +3,7 @@
 use App\Http\Controllers\LocadoraController;
 use App\Http\Controllers\ModeloController;
 use App\Http\Controllers\MontadoraController;
+use App\Http\Controllers\VeiculoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,6 @@ Route::resource('/modelo', ModeloController::class);
 
 // Rotas de locadoras
 Route::resource('/locadora', LocadoraController::class);
+
+// Rotas de locadoras
+Route::resource('/veiculo', VeiculoController::class);

@@ -21,7 +21,7 @@ class Modelo extends Model
     ];
 
     /**
-     * Modelos
+     * Montadora
      * 
      * @return BelongsTo
      */

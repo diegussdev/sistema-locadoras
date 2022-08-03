@@ -30,7 +30,7 @@
                                 <a class="nav-link {{ Route::is('modelo.*') ? 'active' : '' }}" aria-current="page" href="{{ route('modelo.index') }}">Modelos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="">Veículos</a>
+                                <a class="nav-link {{ Route::is('veiculo.*') ? 'active' : '' }}" aria-current="page" href="{{ route('veiculo.index') }}">Veiculos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ Route::is('locadora.*') ? 'active' : '' }}" aria-current="page" href="{{ route('locadora.index') }}">Locadoras</a>
