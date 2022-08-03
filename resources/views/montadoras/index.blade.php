@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="d-flex justify-content-between">
-    <h1>Modelos</h1>
+    <h1>Montadoras</h1>
     <div class="my-auto">
         <a href="{{route('montadora.create')}}" type="button" class="btn btn-primary btn-sm">Adicionar Montadora</a>
     </div>

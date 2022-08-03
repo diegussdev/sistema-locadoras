@@ -10,7 +10,7 @@
         @include('montadoras._form')
         
         <div class="w-100 d-flex justify-content-end mt-4">
-            <input type="submit" name="store" value="Salvar">
+            <input type="submit" class="btn btn-success" name="store" value="Salvar">
         </div>
     </form>
 </div>
