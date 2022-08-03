@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', fn() => view('home'))->name('home');
+
 // Rotas de montadoras
 Route::resource('/montadora', MontadoraController::class);

@@ -1,4 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<h1>Início</h1>
+
+<div class="d-flex justify-content-center">
+    <h1>Sistema de Locadoras</h1>
+</div>
+
 @endsection
