@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('montadoras', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->unique('name');
+            $table->string('nome');
+            $table->unique('nome');
             $table->timestamps();
         });
     }

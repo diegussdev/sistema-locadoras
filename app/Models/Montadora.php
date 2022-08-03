@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Montadora extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nome'
+    ];
+
+    public function modelos()
+    {
+        return $this->hasMany(Modelo::class);
+    }
 }
