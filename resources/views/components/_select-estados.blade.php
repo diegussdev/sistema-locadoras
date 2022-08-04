@@ -29,5 +29,5 @@
         <option value="SE" {{ isset($selected) && $selected == 'SE' ? 'selected' : ''  }}>Sergipe</option>
         <option value="TO" {{ isset($selected) && $selected == 'TO' ? 'selected' : ''  }}>Tocantins</option>
     </select>
-    <label for="estados_select">Montadora</label>
+    <label for="estados_select">Estado</label>
 </div>

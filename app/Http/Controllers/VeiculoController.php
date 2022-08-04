@@ -115,7 +115,7 @@ class VeiculoController
                 }
                 Log::create($dados);
             } catch (Exception $e) {
-                return Redirect::to($url)->with('fail', "Erro ao vincular locadora: {$e->getMessage()}");        
+                return Redirect::to($url)->with('fail', "Erro ao vincular locadora");        
             }
         }
 
