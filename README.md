@@ -22,7 +22,9 @@
 # Instruções
 - Clone o repositório
 - Acesse o diretório do projeto
-- Execute `./vendor/bin/sail composer install`
+- Renomeio o arquivo `.env.example` para `.env`
+- Garanta permissão ao diretório `chmod -R 777 ./`
+- Execute `composer install --ignore-platform-reqs`
 - Inicie o docker e execute `./vendor/bin/sail up`
 - Execute as migrations `./vendor/bin/sail artisan migrate`
 - Acesse `localhost` pelo navegador
