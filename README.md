@@ -31,24 +31,24 @@
 
 - Locadoras
 
-![Locadoras](/storage/app/public/locadora.png "Locadoras")
+![Locadoras](/prints/locadora.png "Locadoras")
 
 - Montadoras
 
-![Montadoras](/storage/app/public/montadora.png "Montadoras")
+![Montadoras](/prints/montadora.png "Montadoras")
 
 - Modelos
 
-![Modelos](/storage/app/public/modelo.png "Modelos")
+![Modelos](/prints/modelo.png "Modelos")
 
 - Veículos
 
-![Veículos](/storage/app/public/veiculo.png "Veículos")
+![Veículos](/prints/veiculo.png "Veículos")
 
 - Relatório: Locadoras x Veículos
 
-![Relatório: Locadoras x Veículos](/storage/app/public/relatorio-locadoras-veiculos.png "Relatório: Locadoras x Veículos")
+![Relatório: Locadoras x Veículos](/prints/relatorio-locadoras-veiculos.png "Relatório: Locadoras x Veículos")
 
 - Relatório: Log Veículos
 
-![Log Veículos](/storage/app/public/relatorio-log-veiculos.png "Log Veículos")
+![Log Veículos](/prints/relatorio-log-veiculos.png "Log Veículos")
