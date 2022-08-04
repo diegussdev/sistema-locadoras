@@ -36,4 +36,14 @@ class Log extends Model
     {
         return $this->belongsTo(Locadora::class);
     }
+
+    /**
+     * Veículo
+     * 
+     * @return BelongsTo
+     */
+    public function veiculo()
+    {
+        return $this->belongsTo(Veiculo::class);
+    }
 }

@@ -5,5 +5,5 @@
         <option value="{{ $modelo->id }}" {{ isset($selected) && $selected == $modelo->id ? 'selected' : ''  }}>{{ $modelo->nome }}</option>
       @endforeach
     </select>
-    <label for="modelos_select">Montadora</label>
+    <label for="modelos_select">Modelo</label>
 </div>

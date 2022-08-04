@@ -3,6 +3,7 @@
 use App\Http\Controllers\LocadoraController;
 use App\Http\Controllers\ModeloController;
 use App\Http\Controllers\MontadoraController;
+use App\Http\Controllers\RelatorioController;
 use App\Http\Controllers\VeiculoController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,3 +31,9 @@ Route::resource('/locadora', LocadoraController::class);
 
 // Rotas de locadoras
 Route::resource('/veiculo', VeiculoController::class);
+
+// Rota de relatório locadorasxveículo
+Route::get('/relatorio-locadoras-veiculos', [RelatorioController::class, 'locadorasVeiculos'])->name('relatorio-locadoras-veiculos');
+
+// Rota de relatório locadorasxmodelos
+Route::get('/relatorio-log-veiculos', [RelatorioController::class, 'logVeiculos'])->name('relatorio-log-veiculos');

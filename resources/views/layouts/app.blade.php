@@ -35,6 +35,22 @@
                             <li class="nav-item">
                                 <a class="nav-link {{ Route::is('locadora.*') ? 'active' : '' }}" aria-current="page" href="{{ route('locadora.index') }}">Locadoras</a>
                             </li>
+                            <li class="nav-item">
+
+                                <li class="nav-item dropdown">
+                                    <div class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Relatórios
+                                    </div>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a hr class="dropdown-item {{ Route::is('relatorio-locadoras-veiculos') ? 'active' : '' }}" aria-current="page" href="{{ route('relatorio-locadoras-veiculos') }}">Locadoras x Veículos</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item {{ Route::is('relatorio-log-veiculos') }}" href="{{ route('relatorio-log-veiculos') }}">Log Veículos</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </li>
                         </ul>
                     </div>
                 </div>
