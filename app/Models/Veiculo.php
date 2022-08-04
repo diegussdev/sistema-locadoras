@@ -35,4 +35,25 @@ class Veiculo extends Model
     {
         return $this->belongsTo(Modelo::class);
     }
+
+    /**
+     * Locadora
+     * 
+     * @return Locadora|null
+     */
+    public function locadora()
+    {
+        $log = Log::where('veiculo_id', '=', $this->id)->whereNull('data_fim')->first();
+        return $log ? $log->locadora : null;
+    }
+
+    /**
+     * Último log
+     * 
+     * @return Locadora|null
+     */
+    public function ultimoLog()
+    {
+        return Log::where('veiculo_id', '=', $this->id)->whereNull('data_fim')->first();
+    }
 }

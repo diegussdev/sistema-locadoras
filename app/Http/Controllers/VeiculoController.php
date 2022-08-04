@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Locadora;
+use App\Models\Log;
 use App\Models\Modelo;
 use App\Models\Veiculo;
+use DateTime;
 use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -26,7 +29,8 @@ class VeiculoController
     public function create()
     {
         $modelos = Modelo::all();
-        return view('veiculos.novo', compact('modelos'));
+        $locadoras = Locadora::all();
+        return view('veiculos.novo', compact('modelos', 'locadoras'));
     }
 
     /**
@@ -35,7 +39,8 @@ class VeiculoController
     public function show(Veiculo $veiculo)
     {
         $modelos = Modelo::all();
-        return view('veiculos.editar', compact('veiculo', 'modelos'));
+        $locadoras = Locadora::all();
+        return view('veiculos.editar', compact('veiculo', 'modelos', 'locadoras'));
     }
 
     /**
@@ -50,12 +55,28 @@ class VeiculoController
         
         try {
             $dados = $request->all();
-            Veiculo::create($dados);
+            $veiculo = Veiculo::create($dados);
         } catch (Exception $e) {
             return Redirect::to($url)->with('fail', "Erro ao cadastrar veículo");        
         }
 
-        return Redirect::to($url)->with('success', "Veículo cadastado com sucesso!");        
+        $locadoraId = $request->input('locadora_id');
+
+        if ($locadoraId) {
+            $dados = [
+                'locadora_id' => $locadoraId,
+                'veiculo_id' => $veiculo->id,
+                'data_inicio' => new DateTime()
+            ];
+            
+            try {
+                Log::create($dados);
+            } catch (Exception $e) {
+                return Redirect::to($url)->with('fail', "Erro ao vincular locadora");        
+            }
+        }
+
+        return Redirect::to($url)->with('success', "Veículo cadastado com sucesso!");
     }
 
     /**
@@ -74,6 +95,28 @@ class VeiculoController
             $veiculo->update($dados);
         } catch (Exception $e) {
             return Redirect::to($url)->with('fail', "Erro ao alterar veículo");        
+        }
+
+        $locadoraId = $request->input('locadora_id');
+        $locadoraAtual = $veiculo->locadora();
+
+        if (!$locadoraAtual || ($locadoraAtual && $locadoraAtual->id != $locadoraId)) {
+            $logUpdate = $veiculo->ultimoLog();
+
+            $dados = [
+                'locadora_id' => $locadoraId,
+                'veiculo_id' => $veiculo->id,
+                'data_inicio' => new DateTime()
+            ];
+            
+            try {
+                if ($logUpdate) {
+                    $logUpdate->update(['data_fim' => new DateTime()]);
+                }
+                Log::create($dados);
+            } catch (Exception $e) {
+                return Redirect::to($url)->with('fail', "Erro ao vincular locadora: {$e->getMessage()}");        
+            }
         }
 
         return Redirect::to($url)->with('success', "Veículo alterado com sucesso!");  

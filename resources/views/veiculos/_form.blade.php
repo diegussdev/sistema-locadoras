@@ -1,6 +1,10 @@
 @csrf
 
 <div class="mb-3">
+    @include('components._select-locadoras', ['selected' => isset($veiculo) && $veiculo->locadora() ? $veiculo->locadora()->id : null])
+</div>
+
+<div class="mb-3">
     @include('components._select-modelos', ['required' => true, 'selected' => isset($veiculo) ? $veiculo->modelo->id : null])
 </div>
 
@@ -35,6 +39,6 @@
 </div>
 
 <div class="form-floating mb-3">
-    <input type="text" min="0" max="20" class="form-control" id="chassi" name="chassi" placeholder="Chassi" value="{{ isset($veiculo) ? $veiculo->chassi : ''  }}" required>
+    <input type="text" min="0" class="form-control" id="chassi" name="chassi" placeholder="Chassi" value="{{ isset($veiculo) ? $veiculo->chassi : ''  }}" required>
     <label for="chassi">Chassi</label>
 </div>
